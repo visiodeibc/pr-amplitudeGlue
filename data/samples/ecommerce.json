@@ -1,0 +1,161 @@
+[
+  {
+    "event_type": "purchase_completed",
+    "timestamp": "2024-07-18T17:42:12Z",
+    "event_id": "9f4d2f61-1a3f-4ef7-9721-0e1a4bbd9f11",
+    "user_id": "shopper-172",
+    "user_traits": {
+      "loyalty": {
+        "tier": "gold",
+        "points_balance": 1820,
+        "member_since": "2019-03-04"
+      },
+      "lifetime_value": 1580.45,
+      "marketing_opt_in": {
+        "email": true,
+        "sms": false
+      }
+    },
+    "session": {
+      "session_id": "sess-981",
+      "device": {
+        "platform": "ios",
+        "app_version": "3.17.4",
+        "device_orientation": "portrait"
+      },
+      "geo": {
+        "country": "US",
+        "region": "CA",
+        "city": "San Francisco"
+      }
+    },
+    "cart": {
+      "currency": "USD",
+      "items": [
+        {
+          "sku": "SKU-104",
+          "category": "footwear",
+          "quantity": 1,
+          "unit_price": 129.99,
+          "attributes": {
+            "color": "white",
+            "size": "9",
+            "material": "knit"
+          }
+        },
+        {
+          "sku": "SKU-207",
+          "category": "accessories",
+          "quantity": 2,
+          "unit_price": 19.95,
+          "attributes": {
+            "color": "black",
+            "size": "M",
+            "bundled": true
+          }
+        }
+      ],
+      "promo_codes": ["SUMMER24", "LOYALTY-10"],
+      "subtotal": 169.89,
+      "tax": 15.29,
+      "shipping": 0,
+      "discounts": {
+        "automatic": 10,
+        "membership": 5
+      }
+    },
+    "marketing": {
+      "campaign": "email_flash",
+      "utm": {
+        "source": "mailchimp",
+        "medium": "email",
+        "content": "gradient-banner"
+      },
+      "experiments": [
+        {"test": "upsell_banner", "variant": "B"},
+        {"test": "checkout_copy", "variant": "original"}
+      ]
+    }
+  },
+  {
+    "event_type": "cart_abandoned",
+    "timestamp": "2024-07-19T08:03:44Z",
+    "event_id": "b82b83ba-21ab-4df2-8c8e-2a9aefbd1f2d",
+    "user_id": "shopper-301",
+    "session": {
+      "session_id": "sess-1001",
+      "device": {
+        "platform": "android",
+        "app_version": "3.16.0"
+      },
+      "geo": {
+        "country": "US",
+        "region": "WA"
+      }
+    },
+    "cart": {
+      "currency": "USD",
+      "items": [
+        {
+          "sku": "SKU-451",
+          "category": "electronics",
+          "quantity": 1,
+          "unit_price": 239.0,
+          "attributes": {
+            "color": "navy",
+            "warranty": "extended"
+          }
+        }
+      ],
+      "promo_codes": [],
+      "subtotal": 239.0
+    },
+    "marketing": {
+      "campaign": null,
+      "utm": {},
+      "experiments": []
+    },
+    "reengagement": {
+      "email_sent": true,
+      "seconds_in_session": 515,
+      "scroll_depth_percent": 62
+    }
+  },
+  {
+    "event_type": "return_initiated",
+    "timestamp": "2024-07-22T10:28:19Z",
+    "event_id": "f6140d2a-3c6f-4d61-8a3d-dfd9de661002",
+    "user_id": "shopper-172",
+    "session": {
+      "session_id": "sess-1204",
+      "device": {
+        "platform": "web",
+        "browser": "Chrome",
+        "locale": "en-US"
+      }
+    },
+    "return_details": {
+      "items": [
+        {
+          "sku": "SKU-207",
+          "reason": "damaged_zipper",
+          "condition": "opened",
+          "photos": [
+            "https://cdn.example.com/returns/img-991.jpg",
+            "https://cdn.example.com/returns/img-992.jpg"
+          ]
+        }
+      ],
+      "requested_refund": 39.9,
+      "method": "store_credit"
+    },
+    "support": {
+      "ticket_id": "case-55881",
+      "agent": {
+        "id": "agent-14",
+        "region": "west"
+      },
+      "resolution_eta_days": 4
+    }
+  }
+]

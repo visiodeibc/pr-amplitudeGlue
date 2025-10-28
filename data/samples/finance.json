@@ -1,0 +1,119 @@
+[
+  {
+    "type": "transaction_posted",
+    "time": "2024-07-19T15:05:01Z",
+    "uuid": "txn-110a",
+    "account": {
+      "account_id": "acct-55",
+      "segment": "smb",
+      "industry": "retail",
+      "ownership": {
+        "group_id": "advisor-9",
+        "team": "west-region",
+        "managers": [
+          {"id": "mgr-104", "role": "relationship"},
+          {"id": "mgr-221", "role": "operations"}
+        ]
+      }
+    },
+    "customer": {
+      "user_id": "client-202",
+      "kyc_status": "verified",
+      "risk_score": 0.14,
+      "profiles": {
+        "credit": {
+          "rating": "A",
+          "limit": 250000
+        },
+        "contact": {
+          "primary_email": "client202@example.com",
+          "preferred_channel": "email"
+        }
+      }
+    },
+    "transaction": {
+      "amount": 18500.0,
+      "currency": "USD",
+      "category": "loan_disbursement",
+      "metadata": {
+        "channel": "online_portal",
+        "document_refs": ["doc-778", "doc-781"],
+        "approver": {
+          "id": "approver-44",
+          "role": "risk_officer",
+          "escalation_required": false
+        }
+      },
+      "ledger_entries": [
+        {"account_code": "loan_receivable", "delta": 18500.0},
+        {"account_code": "cash", "delta": -18500.0}
+      ]
+    }
+  },
+  {
+    "type": "risk_alert_created",
+    "time": "2024-07-21T02:58:40Z",
+    "uuid": "alert-77b",
+    "account": {
+      "account_id": "acct-55",
+      "segment": "smb",
+      "ownership": {
+        "group_id": "advisor-9"
+      }
+    },
+    "customer": {
+      "user_id": "client-202",
+      "kyc_status": "verified",
+      "risk_score": 0.83
+    },
+    "alert": {
+      "score": 0.87,
+      "reason": "unusual_withdrawal_pattern",
+      "threshold": 0.8,
+      "reviewers": [
+        {"id": "analyst-4", "level": "tier2", "sla_hours": 12},
+        {"id": "analyst-5", "level": "tier3", "sla_hours": 4}
+      ],
+      "signals": {
+        "velocity": {
+          "hourly_count": 9,
+          "baseline": 1
+        },
+        "geolocation": {
+          "ip_country": "SG",
+          "device_country": "US"
+        }
+      }
+    }
+  },
+  {
+    "type": "transaction_reconciled",
+    "time": "2024-07-22T11:44:03Z",
+    "uuid": "txn-110a",
+    "account": {
+      "account_id": "acct-55",
+      "segment": "smb",
+      "ownership": {
+        "group_id": "advisor-9",
+        "team": "west-region"
+      }
+    },
+    "customer": {
+      "user_id": "client-202",
+      "risk_score": 0.19
+    },
+    "reconciliation": {
+      "source": "core_ledger",
+      "matched_entries": 2,
+      "adjustments": [
+        {"code": "fx_rounding", "amount": -1.42},
+        {"code": "processing_fee", "amount": 10.0}
+      ]
+    },
+    "audit": {
+      "reviewed_by": "auditor-88",
+      "review_time": "2024-07-22T12:05:18Z",
+      "notes": "Confirmed settlement with clearing house"
+    }
+  }
+]

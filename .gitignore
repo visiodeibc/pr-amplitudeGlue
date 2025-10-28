@@ -1,0 +1,26 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments / package managers
+.venv/
+.uv/
+
+# Test & coverage output
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Tooling caches
+.ruff_cache/
+.mypy_cache/
+
+# Local environment secrets
+.env
+
+# Generated reports
+artifacts/examples/
+
+# macOS cruft
+.DS_Store

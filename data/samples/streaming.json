@@ -1,0 +1,120 @@
+[
+  {
+    "event": "playback_started",
+    "sent_at": "2024-07-20T13:20:11Z",
+    "id": "evt-541",
+    "profile": {
+      "user_id": "viewer-88",
+      "plan": "premium",
+      "tenure_months": 28,
+      "watchlist_size": 47,
+      "preferences": {
+        "genres": ["drama", "sci-fi"],
+        "language": "en-US",
+        "captions_enabled": true
+      }
+    },
+    "content": {
+      "title": "The Signal",
+      "series": "Season 02",
+      "episode": 5,
+      "duration_seconds": 3205,
+      "tags": ["serialized", "award-nominated"],
+      "age_rating": "TV-14"
+    },
+    "device": {
+      "type": "smart_tv",
+      "os": "tizen",
+      "app_version": "5.4.2",
+      "firmware_version": "2.19.8"
+    },
+    "stream_quality": {
+      "resolution": "4k",
+      "bitrate_kbps": 5800,
+      "cdn": "cdn-west",
+      "stream_id": "stream-4421"
+    },
+    "experiments": {
+      "ui_layout": "grid",
+      "recommendation_variant": "collaborative_v2"
+    }
+  },
+  {
+    "event": "buffering",
+    "sent_at": "2024-07-20T13:24:07Z",
+    "id": "evt-542",
+    "profile": {
+      "user_id": "viewer-88",
+      "plan": "premium",
+      "preferences": {
+        "genres": ["drama", "sci-fi"],
+        "language": "en-US"
+      }
+    },
+    "content": {
+      "title": "The Signal",
+      "episode": 5
+    },
+    "device": {
+      "type": "smart_tv"
+    },
+    "stream_quality": {
+      "resolution": "4k",
+      "bitrate_kbps": 1400,
+      "buffer_events": 3
+    },
+    "network": {
+      "isp": "Example ISP",
+      "latency_ms": 180,
+      "packet_loss": 0.04,
+      "connection_type": "wifi"
+    }
+  },
+  {
+    "event": "personalization_impression",
+    "sent_at": "2024-07-21T09:12:55Z",
+    "id": "evt-549",
+    "profile": {
+      "user_id": "viewer-305",
+      "plan": "ad_supported",
+      "tenure_months": 3,
+      "watchlist_size": 12,
+      "preferences": {
+        "genres": ["comedy", "sports"],
+        "language": "es-MX"
+      }
+    },
+    "recommendations": {
+      "section": "continue_watching",
+      "items": [
+        {
+          "title": "Goal Line",
+          "rank": 1,
+          "reason_code": "similar_teams",
+          "metadata": {
+            "season_count": 3,
+            "minutes": 45
+          }
+        },
+        {
+          "title": "Laugh Route",
+          "rank": 2,
+          "reason_code": "recently_watched"
+        }
+      ]
+    },
+    "device": {
+      "type": "mobile",
+      "os": "ios",
+      "app_version": "5.4.2",
+      "device_capabilities": ["airplay", "download"]
+    },
+    "ad_breaks": [
+      {
+        "slot": "pre-roll",
+        "duration_seconds": 32,
+        "campaign_id": "camp-884"
+      }
+    ]
+  }
+]

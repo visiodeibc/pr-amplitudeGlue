@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/amplitude_glue/__init__.py
+src/amplitude_glue/cli.py
+src/amplitude_glue/exporters.py
+src/amplitude_glue/openai_client.py
+src/amplitude_glue/schema_inference.py
+src/amplitude_glue/warehouse_queries.py
+src/amplitude_glue.egg-info/PKG-INFO
+src/amplitude_glue.egg-info/SOURCES.txt
+src/amplitude_glue.egg-info/dependency_links.txt
+src/amplitude_glue.egg-info/requires.txt
+src/amplitude_glue.egg-info/top_level.txt
+tests/test_cli.py
+tests/test_schema_inference.py
+tests/test_warehouse_queries.py

@@ -1,16 +1,26 @@
+Metadata-Version: 2.4
+Name: amplitude-glue
+Version: 0.1.0
+Summary: Schema inference proof-of-concept for Amplitude imports
+Author: Amplitude Glue Team
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: openai>=1.21.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: ruff>=0.4; extra == "dev"
+
 # Amplitude Glue Proof of Concept
 
 Amplitude Glue is a Python proof-of-concept that inspects messy JSON event payloads and drafts an Amplitude import plan. The tool infers event schemas, highlights user/group attributes, and emits example SQL for Snowflake, Databricks, BigQuery, and Redshift. Output is saved as a human-readable briefing inside `artifacts/examples/`.
 
 ## Project Goals
-
 - Parse unstructured event payloads for multiple industries (e-commerce, streaming, finance).
 - Suggest event types, event properties, user properties, and group properties suitable for Amplitude ingestion.
 - Produce warehouse-specific SQL templates showing how to hydrate the Amplitude schema layer from staged JSON.
 - Demonstrate how OpenAI function calling can enrich the workflow (offline-safe fallback provided).
 
 ## Getting Started
-
 1. **Install uv** (https://github.com/astral-sh/uv) and ensure Python 3.11+ is available.
 2. **Create a virtual environment**:
    ```bash
@@ -20,29 +30,24 @@ Amplitude Glue is a Python proof-of-concept that inspects messy JSON event paylo
    ```bash
    uv pip install -r requirements.txt
    ```
-4. **Configure OpenAI access** by copying `.env.example` to `.env` and setting `OPENAI_API_KEY`. The CLI loads this file automatically. Without a key the summarizer falls back to deterministic guidance.
+4. **(Optional) Configure OpenAI** by exporting `OPENAI_API_KEY`. Without a key the summarizer falls back to deterministic guidance.
 
 ## Running the Analyzer
-
 Run the CLI against any JSON payload. The command writes a report summarising the inferred schema and SQL examples.
-
 ```bash
 uv run python -m amplitude_glue.cli analyze data/samples/ecommerce.json --output artifacts/examples/ecommerce_report.txt
 uv run python -m amplitude_glue.cli analyze data/samples/streaming.json --output artifacts/examples/streaming_report.txt
 uv run python -m amplitude_glue.cli analyze data/samples/finance.json --output artifacts/examples/finance_report.txt
 ```
-
 Each report includes event definitions, suggested user/group properties, import settings, and multi-warehouse SQL.
 
 ## Repository Layout
-
 - `src/amplitude_glue/`: Python package with schema inference (`schema_inference.py`), OpenAI integration (`openai_client.py`), SQL generators (`warehouse_queries.py`), and CLI (`cli.py`).
 - `data/samples/`: Messy JSON payloads for e-commerce, streaming, and financial services.
 - `artifacts/examples/`: Generated reports (safe to delete/regenerate).
 - `tests/`: pytest suite plus fixtures for synthetic data.
 
 ## Development Workflow
-
 - **Lint & Format**: `uv run ruff check .` and `uv run ruff format .`
 - **Run Tests**: `uv run pytest`
 - **Coverage**: `uv run pytest --cov=amplitude_glue`

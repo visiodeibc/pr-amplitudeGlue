@@ -1,0 +1,19 @@
+[project]
+name = "amplitude-glue"
+version = "0.1.0"
+description = "Schema inference proof-of-concept for Amplitude imports"
+authors = [{ name = "Amplitude Glue Team" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.4",
+]
+
+[tool.uv]
+package = true
